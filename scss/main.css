@@ -1125,7 +1125,7 @@ header .header-items .header-bottom .menu ul li a {
   }
 }
 .container-projects .projects-content .project-1 .left-side {
-  background: url(/images/project-1.jpg);
+  background: url(../images/project-1.jpg);
   -ms-flex-line-pack: end;
       align-content: end;
   padding: 45px;

@@ -160,7 +160,7 @@ header .header-items .header-bottom .menu input {
   }
   header .header-items .header-bottom .menu .burger {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     display: block;
     border: none;
