@@ -1,0 +1,149 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+
+.wrapper {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+}
+.center {
+	max-width: 1296px;
+	width: 100%;
+	margin: 0 auto;
+	@include onlylarge(1440px) {width: 95%;}
+}
+body {
+	font-family: 'HelveticaNeueCyr';
+}
+
+.container-activities {
+    margin-top: 90px;
+    margin-bottom: 150px;
+    @include onlylarge(1024px) {margin-top: 80px; margin-bottom: 80px;}
+    @include onlylarge(600px) {margin-top: 40px; margin-bottom: 40px;}
+    h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin-bottom: 60px;
+    }
+    .mini-nav {
+        margin-bottom: 60px;
+        a {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 140%;
+            color: #333;
+            text-decoration: none;
+        }
+        span {
+            margin: 0 15px;
+            vertical-align: text-bottom;
+        }
+    }
+    p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #333;
+    }
+    .activities-content {
+        display: grid;
+        column-gap: 104px;
+        grid-template-columns: 666px 524px;
+        @include onlylarge(1440px) {grid-template-columns: 51% 45%; column-gap: 4%;}
+        @include onlylarge(1024px) {grid-template-columns: 1fr; row-gap: 60px;}
+        .left-content {
+            display: grid;
+            row-gap: 60px;
+            @include onlylarge(600px) {row-gap: 30px;}
+            h2 {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 140%;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: #333;
+                margin-bottom: 30px;
+            }
+            .activity-info {
+                padding: 5px 0 5px 40px;
+                border-left: 3px solid #bd0007;
+            }
+        }
+        .right-content {
+            background: #133d8d;
+            padding: 50px 60px 60px 60px;
+            color: white;
+            max-height: 510px;
+            height: 100%;
+            @include onlylarge(1280px) {padding: 30px;}
+            @include onlylarge(600px) {max-height: 95%;}
+            h2 {
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 140%;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+            }
+            .projects-info {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                column-gap: 44px;
+                row-gap: 35px;
+                @include onlylarge(600px) {grid-template-columns: 1fr; row-gap: 20px;}
+                p {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: white;
+
+                }
+                p.number {
+                    font-weight: 900;
+                    font-size: 64px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}

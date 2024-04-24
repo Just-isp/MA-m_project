@@ -1,0 +1,140 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+
+.wrapper {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+}
+.center {
+	max-width: 1296px;
+	width: 100%;
+	margin: 0 auto;
+	@include onlylarge(1440px) {width: 95%;}
+}
+body {
+	font-family: 'HelveticaNeueCyr';
+}
+
+// Footer
+footer {
+	background: #133d8d;
+	.footer-content {
+		padding-top: 60px;
+    	padding-bottom: 70px;
+		@include onlylarge(600px) {padding-top: 40px; padding-bottom: 40px;}
+		.footer-top	{
+			text-align: center;
+    		margin-bottom: 40px;
+		}
+		.footer-bottom {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			column-gap: 24px;
+			@include onlylarge(1024px) {grid-template-columns: 1fr 1fr; row-gap: 24px;}
+			@include onlylarge(600px) {grid-template-columns: 1fr; row-gap: 14px;}
+			div {
+				h6 {
+					font-weight: 700;
+					font-size: 16px;
+					line-height: 140%;
+					letter-spacing: 0.05em;
+					text-transform: uppercase;
+					color: white;
+					margin-bottom: 25px;
+					@include onlylarge(600px) {margin-bottom: 16px;}
+					.triangle {
+						color: white;
+						font-size: 16px;
+						margin-left: 10px;
+						display: none;
+						transition: 0.5s;
+						@include onlylarge(600px) {display: inline-block;}
+					}
+				}
+				h6.opened span {
+					transform: rotate(90deg);
+				}
+				ul {
+					@include onlylarge(600px) {display: none;}
+					li {
+						margin-bottom: 15px;
+						a {
+							font-weight: 500;
+							font-size: 14px;
+							line-height: 140%;
+							color: white;
+							text-decoration: none;
+						}
+					}
+					li:last-child {
+						margin-bottom: 0;
+					}
+				}
+				.opened {
+					display: block;
+				}
+				p {
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 140%;
+					text-align: right;
+					color: white;
+					margin-bottom: 15px;
+					margin-left: 40px;
+					@include onlylarge(1024px) {text-align: left; margin-left: 0;}
+					a {
+						font-weight: 700;
+						font-size: 14px;
+						line-height: 140%;
+						letter-spacing: 0.05em;
+						text-transform: uppercase;
+						text-align: right;
+						color: white;
+						text-decoration: none;
+					}
+				}
+				p:last-child {
+					margin-top: 30px;
+				}
+			}
+			.footer-contacts {
+				@include onlylarge(1024px) {align-self: end;}
+			}
+		}
+	}
+}

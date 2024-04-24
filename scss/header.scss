@@ -1,0 +1,235 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+
+.wrapper {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+}
+.center {
+	max-width: 1296px;
+	width: 100%;
+	margin: 0 auto;
+	@include onlylarge(1440px) {width: 95%;}
+}
+body {
+	font-family: 'HelveticaNeueCyr';
+}
+
+// Header
+header {
+	background-color: #133D8D;
+	color: white;
+	.header-items {
+		display: grid;
+		.header-top {
+			box-sizing: border-box;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+			display: flex;
+			justify-content: space-between;
+			height: 80px;
+			padding: 25px 0;
+			.head-contacts {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 50px;
+				align-content: center;
+				@include onlylarge(768px) {display: none;}
+				a {
+					text-decoration: none;
+					font-weight: 500;
+					font-size: 14px;
+					line-height: 140%;
+					color: #fff;
+					&:first-child {
+						justify-self: end;
+					}
+				}
+			}
+			form {
+				position: relative;
+				margin: 0;
+				margin-left: 30px;
+				input {
+					height: 30px;
+					width: 0;
+					padding-right: 30px;
+					border: none;
+					border-bottom: 2px solid transparent;
+					outline: none;
+					background: transparent;
+					transition: .4s cubic-bezier(0, 0.8, 0, 1);
+					position: absolute;
+					top: 0;
+					right: 0;
+					z-index: 2;
+					color: #fff;
+					&::-webkit-input-placeholder {
+						color: #fff;
+						font-size: 14px;
+					}
+					&::-moz-placeholder {
+						color: #fff;
+						font-size: 14px;
+					}
+					&:focus {
+						width: 150px;
+						z-index: 1;
+						border-bottom: 2px solid #F9F0DA;
+					}
+				}
+				button {
+					background: rgba(19, 61, 141, 0);
+					border: none;
+					height: 30px;
+					width: 30px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					cursor: pointer;
+					&:before {
+						content: url(/images/search-logo-1.svg);
+					}
+				}
+			}
+		}
+		.header-bottom {
+			margin-bottom: 30px;
+			.menu {
+				margin-top: 30px;
+				input {
+					display: none;
+				}
+				@include onlylarge(768px){
+					.burger-checkbox {
+						position: absolute;
+						visibility: hidden;
+					}
+					.burger {
+						position: relative;
+						z-index: 1;
+						cursor: pointer;
+						display: block;
+						border: none;
+						background: transparent;
+						width: 40px;
+						height: 26px;
+					}
+					.burger::before,
+					.burger::after {
+						content: '';
+						left: 0;
+						position: absolute;
+						display: block;
+						width: 100%;
+						height: 4px;
+						border-radius: 10px;
+						background: #FFFFFF;
+					}
+					.burger::before {
+						top: 0;
+						box-shadow: 0 11px 0 #FFFFFF;
+						transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+					}
+					.burger::after {
+						bottom: 0;
+						transition: bottom .3s .15s, transform .3s;
+					}
+					.burger-checkbox:checked + .burger::before {
+						top: 11px;
+						transform: rotate(45deg);
+						box-shadow: 0 6px 0 rgba(0,0,0,0);
+						transition: box-shadow .15s, top .3s, transform .3s .15s;
+					}
+					.burger-checkbox:checked + .burger::after {
+						bottom: 11px;
+						transform: rotate(-45deg);
+						transition: bottom .3s, transform .3s .15s;
+					}
+					.menu-list {
+						top: 80px;
+						left: 0;
+						position: absolute;
+						display: grid;
+						gap: 16px;
+						padding: 42px 0;
+						margin: 0;
+						justify-content: center;
+						background: #133d8d;
+						list-style-type: none;
+						transform: translateX(-110%);
+						transition: .3s;
+						width: 100vw;
+						height: 100vh;
+						align-content: baseline;
+						z-index: 1;
+						li a {
+							text-align: center;
+						}
+					}
+					.menu-item {
+						display: block;
+						padding: 8px;
+						color: white;
+						font-size: 18px;
+						text-align: center;
+						text-decoration: none;
+					}
+					.menu-item:hover {
+						background: rgba(255,255,255,.2)
+					}
+					.burger-checkbox:checked ~ .menu-list {
+						transform: translateX(0);
+					}
+				}
+				ul {
+					display: flex;
+					justify-content: space-between;
+					li a {
+						text-decoration: none;
+						font-weight: 700;
+						font-size: 14px;
+						line-height: 140%;
+						letter-spacing: 0.05em;
+						text-transform: uppercase;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}

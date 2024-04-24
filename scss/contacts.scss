@@ -1,0 +1,141 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@mixin onlylarge($w)
+{
+    @media only screen and (max-width: $w)
+    {
+        @content;
+    }
+}
+
+.wrapper {
+	max-width: 1920px;
+	width: 100%;
+	margin: 0 auto;
+}
+.center {
+	max-width: 1296px;
+	width: 100%;
+	margin: 0 auto;
+	@include onlylarge(1440px) {width: 95%;}
+}
+body {
+	font-family: 'HelveticaNeueCyr';
+}
+
+.container-contacts {
+    margin-top: 90px;
+    margin-bottom: 150px;
+    @include onlylarge(1024px) {margin-top: 80px; margin-bottom: 80px;}
+    @include onlylarge(600px) {margin-top: 40px; margin-bottom: 40px;}
+    h1 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #333;
+        margin-bottom: 60px;
+        @include onlylarge(600px) {margin-bottom: 30px;}
+    }
+    .mini-nav {
+        margin-bottom: 60px;
+        a {
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 140%;
+            color: #333;
+            text-decoration: none;
+        }
+        span {
+            margin: 0 15px;
+            vertical-align: text-top;
+        }
+    }
+    .map {
+        position: relative;
+        .contacts-box {
+            position: absolute;
+            left: 50px;
+            top: 45px;
+            background: white;
+            padding: 35px 40px;
+            max-width: 194px;
+            width: 100%;
+            height: 186px;
+            @include onlylarge(768px) {padding: 5px; top: 5px; left: 5px;}
+            .city {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 35px;
+                @include onlylarge(768px) {margin-bottom: 20px;}
+                .msc, .spb {
+                    width: 78px;
+					height: 37px;
+					align-content: center;
+					text-align: center;
+                    background: #133d8d;
+                    color: white;
+                    margin-bottom: 0;
+					a {
+                        font-weight: 500;
+                        font-size: 13px;
+                        line-height: 140%;
+                        text-decoration: none;
+					}
+                }
+                .spb {
+                    width: 96px;
+					height: 37px;
+                    background: rgba(19, 61, 141, 0.5); 
+                }
+            }
+            .contacts {
+                display: grid;
+                grid-template-columns: 20px 1fr;
+                row-gap: 17px;
+                column-gap: 15px;
+                align-items: center;
+                @include onlylarge(768px) {column-gap: 5px;}
+                p {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 140%;
+                    color: #333;
+                }
+            }
+        }
+        iframe {
+            max-width: 1296px;
+            width: 100%;
+            height: 560px;
+        }
+    }
+}

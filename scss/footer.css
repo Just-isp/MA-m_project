@@ -1,0 +1,178 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.center {
+  max-width: 1296px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1440px) {
+  .center {
+    width: 95%;
+  }
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+}
+
+footer {
+  background: #133d8d;
+}
+footer .footer-content {
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+@media only screen and (max-width: 600px) {
+  footer .footer-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+footer .footer-content .footer-top {
+  text-align: center;
+  margin-bottom: 40px;
+}
+footer .footer-content .footer-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -webkit-column-gap: 24px;
+     -moz-column-gap: 24px;
+          column-gap: 24px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .footer-content .footer-bottom {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 24px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  footer .footer-content .footer-bottom {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+}
+footer .footer-content .footer-bottom div h6 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 25px;
+}
+@media only screen and (max-width: 600px) {
+  footer .footer-content .footer-bottom div h6 {
+    margin-bottom: 16px;
+  }
+}
+footer .footer-content .footer-bottom div h6 .triangle {
+  color: white;
+  font-size: 16px;
+  margin-left: 10px;
+  display: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+@media only screen and (max-width: 600px) {
+  footer .footer-content .footer-bottom div h6 .triangle {
+    display: inline-block;
+  }
+}
+footer .footer-content .footer-bottom div h6.opened span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+@media only screen and (max-width: 600px) {
+  footer .footer-content .footer-bottom div ul {
+    display: none;
+  }
+}
+footer .footer-content .footer-bottom div ul li {
+  margin-bottom: 15px;
+}
+footer .footer-content .footer-bottom div ul li a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: white;
+  text-decoration: none;
+}
+footer .footer-content .footer-bottom div ul li:last-child {
+  margin-bottom: 0;
+}
+footer .footer-content .footer-bottom div .opened {
+  display: block;
+}
+footer .footer-content .footer-bottom div p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: right;
+  color: white;
+  margin-bottom: 15px;
+  margin-left: 40px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .footer-content .footer-bottom div p {
+    text-align: left;
+    margin-left: 0;
+  }
+}
+footer .footer-content .footer-bottom div p a {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: right;
+  color: white;
+  text-decoration: none;
+}
+footer .footer-content .footer-bottom div p:last-child {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .footer-content .footer-bottom .footer-contacts {
+    -ms-flex-item-align: end;
+        align-self: end;
+  }
+}/*# sourceMappingURL=footer.css.map */

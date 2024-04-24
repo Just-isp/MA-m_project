@@ -1,0 +1,183 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.center {
+  max-width: 1296px;
+  width: 100%;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 1440px) {
+  .center {
+    width: 95%;
+  }
+}
+
+body {
+  font-family: "HelveticaNeueCyr";
+}
+
+.container-contacts {
+  margin-top: 90px;
+  margin-bottom: 150px;
+}
+@media only screen and (max-width: 1024px) {
+  .container-contacts {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .container-contacts {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+.container-contacts h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 140%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 60px;
+}
+@media only screen and (max-width: 600px) {
+  .container-contacts h1 {
+    margin-bottom: 30px;
+  }
+}
+.container-contacts .mini-nav {
+  margin-bottom: 60px;
+}
+.container-contacts .mini-nav a {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 140%;
+  color: #333;
+  text-decoration: none;
+}
+.container-contacts .mini-nav span {
+  margin: 0 15px;
+  vertical-align: text-top;
+}
+.container-contacts .map {
+  position: relative;
+}
+.container-contacts .map .contacts-box {
+  position: absolute;
+  left: 50px;
+  top: 45px;
+  background: white;
+  padding: 35px 40px;
+  max-width: 194px;
+  width: 100%;
+  height: 186px;
+}
+@media only screen and (max-width: 768px) {
+  .container-contacts .map .contacts-box {
+    padding: 5px;
+    top: 5px;
+    left: 5px;
+  }
+}
+.container-contacts .map .contacts-box .city {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 35px;
+}
+@media only screen and (max-width: 768px) {
+  .container-contacts .map .contacts-box .city {
+    margin-bottom: 20px;
+  }
+}
+.container-contacts .map .contacts-box .city .msc, .container-contacts .map .contacts-box .city .spb {
+  width: 78px;
+  height: 37px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  text-align: center;
+  background: #133d8d;
+  color: white;
+  margin-bottom: 0;
+}
+.container-contacts .map .contacts-box .city .msc a, .container-contacts .map .contacts-box .city .spb a {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 140%;
+  text-decoration: none;
+}
+.container-contacts .map .contacts-box .city .spb {
+  width: 96px;
+  height: 37px;
+  background: rgba(19, 61, 141, 0.5);
+}
+.container-contacts .map .contacts-box .contacts {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  row-gap: 17px;
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .container-contacts .map .contacts-box .contacts {
+    -webkit-column-gap: 5px;
+       -moz-column-gap: 5px;
+            column-gap: 5px;
+  }
+}
+.container-contacts .map .contacts-box .contacts p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  color: #333;
+}
+.container-contacts .map iframe {
+  max-width: 1296px;
+  width: 100%;
+  height: 560px;
+}/*# sourceMappingURL=contacts.css.map */
